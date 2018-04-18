@@ -8,7 +8,7 @@
     <string name="request_data">请求数据</string>
     <string name="load">加载</string>
     <string name="loading_failed">数据加载失败</string>
-    <string name="title_elementary">基本</string>
+    <string name="title_complete">总结</string>
     <string name="title_map">转换(map)</string>
     <string name="title_zip">压合(zip)</string>
     <string name="page_with_number">第%d页</string>
@@ -25,8 +25,8 @@
     <string name="data_source_disk">磁盘</string>
     <string name="data_source_network">网络</string>
     <string name="question_mark">\?</string>
-    <string name="dialog_elementary">RxJava 和 Retrofit 结合使用最基本的格式：用 subscribeOn() 和 observeOn() 来控制线程，并通过 subscribe() 来触发网络请求的开始。代码大致形式：\n\napi.getData()\n&#160;&#160;&#160;&#160;.subscribeOn(Schedulers.io())\n&#160;&#160;&#160;&#160;.observeOn(AndroidSchedulers.mainThread())\n&#160;&#160;&#160;&#160;.subscribe(observer);</string>
-    <string name="api_source_zhuangbi">* <b>装逼大全zhuangbi.info(网站已经失效)</b> </string>
+    <string name="dialog_complete">RxJava 和 Retrofit 结合使用综合的格式：用 subscribeOn() 和 observeOn() 来控制线程，并通过 subscribe() 来触发网络请求的开始。代码大致形式：\n\napi.getData()\n&#160;&#160;&#160;&#160;.subscribeOn(Schedulers.io())\n&#160;&#160;&#160;&#160;.observeOn(AndroidSchedulers.mainThread())\n&#160;&#160;&#160;&#160;.subscribe(observer);</string>
+    <string name="api_source_biying">* <b>爬取必应每日一图</b>  https://blog.csdn.net/simplebam/article/details/72819547 </string>
     <string name="api_source_gank">* 本页 Sample 使用的 API 来自 <b>干货集中营</b> gank.io</string>
     <string name="api_source_huaban_and_gank">* 本页 Sample 使用的 API 来自 <b>花瓣福利</b> https://www.showapi.com/api/lookPoint/819 和 <b>干货集中营</b> gank.io</string>
     <string name="dialog_map">有些服务端的接口设计，会在返回的数据外层包裹一些额外信息，这些信息对于调试很有用，但本地显示是用不到的。使用 map() 可以把外层的格式剥掉，只留下本地会用到的核心格式。代码大致形式：\n\napi.getData()\n&#160;&#160;&#160;&#160;<b>.map(response -> response.data)</b>\n&#160;&#160;&#160;&#160;.subscribeOn(Schedulers.io())\n&#160;&#160;&#160;&#160;.observeOn(AndroidSchedulers.mainThread())\n&#160;&#160;&#160;&#160;.subscribe(observer);\n\n(详见本项目源码)\n\n当然，map() 也可以用于基于其他各种需求的格式转换。</string>

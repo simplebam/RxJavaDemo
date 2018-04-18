@@ -11,4 +11,6 @@ public interface Constant {
     int SHOWAPI_TYPE = 34;
     String SHOWAPI_SIGN = "f1aaabb545134c46a2fd459979cc47c2";
 
+    //http://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1
+    String YING_FORMAT="js";
 }

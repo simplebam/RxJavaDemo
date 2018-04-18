@@ -9,7 +9,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
-import com.yueyue.rxjavademo.module.elementary_1.ElementaryFragment;
+import com.yueyue.rxjavademo.module.complete_1.CompleteFragment;
 import com.yueyue.rxjavademo.module.map_2.MapFragment;
 import com.yueyue.rxjavademo.module.token_4.TokenFragment;
 import com.yueyue.rxjavademo.module.token_advanced_5.TokenAdvancedFragment;
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             public Fragment getItem(int position) {
                 switch (position) {
                     case 0:
-                        return new ElementaryFragment();
+                        return new CompleteFragment();
                     case 1:
                         return new MapFragment();
                     case 2:
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 //                    case 5:
 //                        return new CacheFragment();
                     default:
-                        return new ElementaryFragment();
+                        return new CompleteFragment();
                 }
             }
 
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
             public CharSequence getPageTitle(int position) {
                 switch (position) {
                     case 0:
-                        return getString(R.string.title_elementary);
+                        return getString(R.string.title_complete);
                     case 1:
                         return getString(R.string.title_map);
                     case 2:
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
                     case 5:
                         return getString(R.string.title_cache);
                     default:
-                        return getString(R.string.title_elementary);
+                        return getString(R.string.title_complete);
                 }
             }
         });

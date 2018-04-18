@@ -5,6 +5,7 @@ import android.util.Log;
 import com.yueyue.rxjavademo.network.api.FakeApi;
 import com.yueyue.rxjavademo.network.api.GankApi;
 import com.yueyue.rxjavademo.network.api.HuaBanApi;
+import com.yueyue.rxjavademo.network.api.YingApi;
 import com.yueyue.rxjavademo.utils.ToastUtil;
 
 import io.reactivex.functions.Consumer;
@@ -29,6 +30,7 @@ public class NetworkService {
     private static GankApi gankApi;
     private static HuaBanApi huaBanApi;
     private static FakeApi fakeApi;
+    private static YingApi yingApi;
 
     /**
      * 其实cancel网络请求的时候，如果还未和服务器建立连接，它会回调到onFailure()方法中，
@@ -50,17 +52,13 @@ public class NetworkService {
 
     public static GankApi getGankApi() {
         if (gankApi == null) {
-            synchronized (NetworkService.class) {
-                if (gankApi == null) {
-                    Retrofit retrofit = new Retrofit.Builder()
-                            .client(okHttpClient)
-                            .baseUrl(GankApi.HOST)
-                            .addConverterFactory(gsonConverterFactory)
-                            .addCallAdapterFactory(rxJavaCallAdapterFactory)
-                            .build();
-                    gankApi = retrofit.create(GankApi.class);
-                }
-            }
+            Retrofit retrofit = new Retrofit.Builder()
+                    .client(okHttpClient)
+                    .baseUrl(GankApi.HOST)
+                    .addConverterFactory(gsonConverterFactory)
+                    .addCallAdapterFactory(rxJavaCallAdapterFactory)
+                    .build();
+            gankApi = retrofit.create(GankApi.class);
         }
         return gankApi;
     }
@@ -77,6 +75,19 @@ public class NetworkService {
             huaBanApi = retrofit.create(HuaBanApi.class);
         }
         return huaBanApi;
+    }
+
+    public static YingApi getYingApi() {
+        if (yingApi == null) {
+            Retrofit retrofit = new Retrofit.Builder()
+                    .client(okHttpClient)
+                    .baseUrl(YingApi.HOST)
+                    .addConverterFactory(gsonConverterFactory)
+                    .addCallAdapterFactory(rxJavaCallAdapterFactory)
+                    .build();
+            yingApi = retrofit.create(YingApi.class);
+        }
+        return yingApi;
     }
 
     public static FakeApi getFakeApi() {
