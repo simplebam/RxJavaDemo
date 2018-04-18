@@ -2,6 +2,7 @@ package com.yueyue.rxjavademo.network;
 
 import android.util.Log;
 
+import com.yueyue.rxjavademo.network.api.FakeApi;
 import com.yueyue.rxjavademo.network.api.GankApi;
 import com.yueyue.rxjavademo.network.api.HuaBanApi;
 import com.yueyue.rxjavademo.utils.ToastUtil;
@@ -27,6 +28,7 @@ public class NetworkService {
 
     private static GankApi gankApi;
     private static HuaBanApi huaBanApi;
+    private static FakeApi fakeApi;
 
     /**
      * 其实cancel网络请求的时候，如果还未和服务器建立连接，它会回调到onFailure()方法中，
@@ -75,6 +77,17 @@ public class NetworkService {
             huaBanApi = retrofit.create(HuaBanApi.class);
         }
         return huaBanApi;
+    }
+
+    public static FakeApi getFakeApi() {
+        if (fakeApi == null) {
+            synchronized (NetworkService.class) {
+                if (fakeApi == null) {
+                    fakeApi = new FakeApi();
+                }
+            }
+        }
+        return fakeApi;
     }
 
 }

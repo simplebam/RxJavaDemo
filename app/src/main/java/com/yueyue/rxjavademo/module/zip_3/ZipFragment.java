@@ -48,7 +48,7 @@ public class ZipFragment extends BaseFragment {
 
     @OnClick(R.id.btn_zipLoad)
     void load() {
-        changeSwipeRefreshState();
+        changeSwipeRefreshState(true);
         unsubscribe();
         Disposable disposable = Observable.zip(
                 NetworkService.getGankApi().getBeauties(10, 1).map(GankBeautyResultToItemsMapper.getInstance()),
@@ -72,11 +72,11 @@ public class ZipFragment extends BaseFragment {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                         items -> {
-                            changeSwipeRefreshState();
+                            changeSwipeRefreshState(false);
                             mAdapter.setItems(items);
                         },
                         throwable -> {
-                            changeSwipeRefreshState();
+                            changeSwipeRefreshState(false);
                             ToastUtil.showShort(R.string.loading_failed);
                         });
         mCompositeDisposable.add(disposable);
@@ -108,11 +108,14 @@ public class ZipFragment extends BaseFragment {
         mRecyclerView.setAdapter(mAdapter);
     }
 
-    private void changeSwipeRefreshState() {
-        boolean refreshing = mSwipeRefresh.isRefreshing();
-        mSwipeRefresh.setRefreshing(!refreshing);
-    }
+    private void changeSwipeRefreshState(boolean refreshing) {
+        boolean currRefreshing = mSwipeRefresh.isRefreshing();
+        if (refreshing == currRefreshing) {
+            return;
+        }
 
+        mSwipeRefresh.setRefreshing(refreshing);
+    }
     @Override
     protected int getDialogRes() {
         return R.layout.dialog_zip;

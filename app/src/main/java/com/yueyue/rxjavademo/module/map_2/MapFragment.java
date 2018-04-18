@@ -62,7 +62,7 @@ public class MapFragment extends BaseFragment {
     }
 
     private void loadPage(int page) {
-        changeSwipeRefreshState();
+        changeSwipeRefreshState(true);
         unsubscribe();
         Disposable disposable = NetworkService.getGankApi()
                 .getBeauties(10, page)
@@ -70,11 +70,11 @@ public class MapFragment extends BaseFragment {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(items -> {
-                    changeSwipeRefreshState();
+                    changeSwipeRefreshState(false);
                     mTvPage.setText(getString(R.string.page_with_number, MapFragment.this.page));
                     mAdapter.setItems(items);
                 }, throwable -> {
-                    changeSwipeRefreshState();
+                    changeSwipeRefreshState(false);
                     ToastUtil.showShort(R.string.loading_failed);
                 });
 
@@ -96,9 +96,13 @@ public class MapFragment extends BaseFragment {
         mSwipeRefresh.setColorSchemeColors(Color.BLUE, Color.GREEN, Color.RED, Color.YELLOW);
     }
 
-    private void changeSwipeRefreshState() {
-        boolean refreshing = mSwipeRefresh.isRefreshing();
-        mSwipeRefresh.setRefreshing(!refreshing);
+    private void changeSwipeRefreshState(boolean refreshing) {
+        boolean currRefreshing = mSwipeRefresh.isRefreshing();
+        if (refreshing == currRefreshing) {
+            return;
+        }
+
+        mSwipeRefresh.setRefreshing(refreshing);
     }
 
 
