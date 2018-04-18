@@ -7,7 +7,7 @@ RxJava+Retrofit2 的常见实际使用场景
 
 
 ### 项目截图
-<a href="./art/meizi.png"><img src="./art/meizi.png" width="40%"/></a><img height="0" width="8px"/><a href="./art/setting.png"><img src="./art/setting.png" width="40%"/></a>
+<a href="../art/complete.png"><img src="../art/complete.png" width="40%"/></a><img height="0" width="8px"/><a href="../art/zip.png"><img src="../art/zip.png" width="40%"/></a>
 
 
 ### 项目中用到的知识
