@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.yueyue.rxjavademo.module.elementary_1.ElementaryFragment;
 import com.yueyue.rxjavademo.module.map_2.MapFragment;
+import com.yueyue.rxjavademo.module.zip_3.ZipFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public int getCount() {
-                return 2;
+                return 3;
             }
 
             @Override
@@ -59,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
                         return new ElementaryFragment();
                     case 1:
                         return new MapFragment();
-//                    case 2:
-//                        return new ZipFragment();
+                    case 2:
+                        return new ZipFragment();
 //                    case 3:
 //                        return new TokenFragment();
 //                    case 4:

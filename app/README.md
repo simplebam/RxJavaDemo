@@ -27,7 +27,7 @@ RxJava+Retrofit2 的常见实际使用场景
     ，朱凯（抛物线）文笔很不错，建议看一下他的文章
   * [Introduction · ReactiveX文档中文翻译 ](https://mcxiaoke.gitbooks.io/rxdocs/content/)
     ,官方文章，永远都是第一步
-* 联网框架:OkHttp
+* OkHttp
   * [Okhttp解析（一）请求的分发，拦截 - 简书 ](https://www.jianshu.com/p/1c39c7bb34ca)
   * [Okhttp解析（二）网络请求的执行 - 简书 ](https://www.jianshu.com/p/601a84fe42a3)
   * [Okhttp解析（三）网络连接的管理 - 简书 ](https://www.jianshu.com/p/9a78fcb77b0a)
@@ -40,7 +40,8 @@ RxJava+Retrofit2 的常见实际使用场景
       服务器建立连接，它会回调到onFailure()方法中，但是还有一种情况就是它会在
       onResponse的时候刚好cancel网络请求，那么它会在onResponse()方法中抛出
       java.net.SocketException: Socket closed
-
+* Retrofit
+   * [你真的会用Retrofit2吗?Retrofit2完全教程 - 简书](https://www.jianshu.com/p/308f3c54abdd)
 
 
 ### 注意点
@@ -69,15 +70,10 @@ RxJava+Retrofit2 的常见实际使用场景
   ```
   这里[Android 在fragment中使用tabhost - 小猴偷米 - 博客园 ](http://www.cnblogs.com/wolf-bing/p/3151452.html)
   指出了  TabLayout 应该设置 android:id="@android:id/tabs"
-
-
-* 当我在 TabLayout 设置 android:id="@android:id/tabs" 时候,我是一脸懵逼的,
-  因为一般情况下我们设置 id 都是 @+id 方式去设置,但它还是出现了.查看了博客才发现
-  它的特殊情况:
-  ,文章提及tabhost布局下使用才会这样设置,原项目的是在 AppBarLayout(父类是LinearLayout)
-  ,所以我修改为 android:id="@+id/tabs"
 * 这里我在原项目看到 "compile 'com.android.support:support-v13:26.1.0'" 这个
   依赖居然是 v13 时候,我就感觉很好奇了,百度了一下:[Android兼容包Support v4.v7.v13区别与应用场景 - CSDN博客 ](https://blog.csdn.net/woshimalingyi/article/details/50800259)
+* 由于装逼王(http://www.zhuangbi.info/)已经失效,这里我决定使用易源数据/showapi
+  的[花瓣福利](https://www.showapi.com/api/lookPoint/819) 作为补充
 
 
 ### RxJava + Retrofit2 推荐

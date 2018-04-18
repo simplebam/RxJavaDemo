@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Button
+    android:background="@color/color_d6d7d7"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/btn_tip"
     android:layout_width="48dp"

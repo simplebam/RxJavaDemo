@@ -12,6 +12,9 @@ import retrofit2.http.Path;
  */
 
 public interface GankApi {
+
+    String HOST="http://gank.io/api/";
+
     //http://gank.io/api/data/福利/50/1
     @GET("data/福利/{number}/{page}")
     Observable<GankBeautyResult> getBeauties(@Path("number") int number, @Path("page") int page);

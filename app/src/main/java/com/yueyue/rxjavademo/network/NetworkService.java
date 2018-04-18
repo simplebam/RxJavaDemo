@@ -3,10 +3,13 @@ package com.yueyue.rxjavademo.network;
 import android.util.Log;
 
 import com.yueyue.rxjavademo.network.api.GankApi;
+import com.yueyue.rxjavademo.network.api.HuaBanApi;
 import com.yueyue.rxjavademo.utils.ToastUtil;
 
 import io.reactivex.functions.Consumer;
 import okhttp3.OkHttpClient;
+import retrofit2.CallAdapter;
+import retrofit2.Converter;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -17,23 +20,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class NetworkService {
     private static final String TAG = NetworkService.class.getSimpleName();
-    private static Retrofit sRetrofit;
+
+    private static OkHttpClient okHttpClient = new OkHttpClient();
+    private static Converter.Factory gsonConverterFactory = GsonConverterFactory.create();
+    private static CallAdapter.Factory rxJavaCallAdapterFactory = RxJava2CallAdapterFactory.create();
+
     private static GankApi gankApi;
-
-    static {
-        initRetrofit();
-    }
-
-
-    private static void initRetrofit() {
-        sRetrofit = new Retrofit.Builder()
-                .client(new OkHttpClient())
-                .baseUrl("http://gank.io/api/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .build();
-        gankApi = sRetrofit.create(GankApi.class);
-    }
+    private static HuaBanApi huaBanApi;
 
     /**
      * 其实cancel网络请求的时候，如果还未和服务器建立连接，它会回调到onFailure()方法中，
@@ -57,11 +50,31 @@ public class NetworkService {
         if (gankApi == null) {
             synchronized (NetworkService.class) {
                 if (gankApi == null) {
-                    gankApi = sRetrofit.create(GankApi.class);
+                    Retrofit retrofit = new Retrofit.Builder()
+                            .client(okHttpClient)
+                            .baseUrl(GankApi.HOST)
+                            .addConverterFactory(gsonConverterFactory)
+                            .addCallAdapterFactory(rxJavaCallAdapterFactory)
+                            .build();
+                    gankApi = retrofit.create(GankApi.class);
                 }
             }
         }
         return gankApi;
+    }
+
+
+    public static HuaBanApi getHuaBanApi() {
+        if (huaBanApi == null) {
+            Retrofit retrofit = new Retrofit.Builder()
+                    .client(okHttpClient)
+                    .baseUrl(HuaBanApi.HOST)
+                    .addConverterFactory(gsonConverterFactory)
+                    .addCallAdapterFactory(rxJavaCallAdapterFactory)
+                    .build();
+            huaBanApi = retrofit.create(HuaBanApi.class);
+        }
+        return huaBanApi;
     }
 
 }
