@@ -9,6 +9,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
+import com.yueyue.rxjavademo.module.cache_6.CacheFragment;
 import com.yueyue.rxjavademo.module.complete_1.CompleteFragment;
 import com.yueyue.rxjavademo.module.map_2.MapFragment;
 import com.yueyue.rxjavademo.module.token_4.TokenFragment;
@@ -52,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public int getCount() {
-                return 5;
+                return 6;
             }
 
             @Override
@@ -68,8 +69,8 @@ public class MainActivity extends AppCompatActivity {
                         return new TokenFragment();
                     case 4:
                         return new TokenAdvancedFragment();
-//                    case 5:
-//                        return new CacheFragment();
+                    case 5:
+                        return new CacheFragment();
                     default:
                         return new CompleteFragment();
                 }

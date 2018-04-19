@@ -12,7 +12,7 @@ RxJava+Retrofit2 的常见实际使用场景
 
 ### 项目中用到的知识
 * 命名规范-这里主要参考Blankj:[Android 开发规范（完结版） - 简书](https://www.jianshu.com/p/45c1675bec69)
-
+* 单例模式:[设计模式之单例模式 | 吴小龙同學 ](http://wuxiaolong.me/2017/01/02/singleton/)
 
 
 ### 项目中用到的开源库
@@ -42,6 +42,12 @@ RxJava+Retrofit2 的常见实际使用场景
       java.net.SocketException: Socket closed
 * Retrofit
    * [你真的会用Retrofit2吗?Retrofit2完全教程 - 简书](https://www.jianshu.com/p/308f3c54abdd)
+* Glide
+  * [Android图片加载框架最全解析（一），Glide的基本用法 - 郭霖的专栏](http://blog.csdn.net/guolin_blog/article/details/53759439)
+    郭霖写的东西都很赞,值得推荐阅读
+  * [Google推荐的图片加载库Glide介绍 - 泡在网上的日子](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0327/2650.html)
+  * [Glide 一个专注于平滑滚动的图片加载和缓存库 - 简书](https://www.jianshu.com/p/4a3177b57949)
+  * [Glide V4 框架新特性（Migrating from v3 to v4） - HeXinGen的博客 - CSDN博客](http://blog.csdn.net/hexingen/article/details/72578066)
 
 
 ### 注意点
@@ -57,6 +63,7 @@ RxJava+Retrofit2 的常见实际使用场景
     录事件。map操作符只能把“Observable<RegisterResponse>”里面的
     “RegisterResponse”转化成“LoginResponse”，而“LoginResponse”只是一个
     model对象，不能作为发射源完成登录操作。
+
 
 ### 开发中遇到的问题
 * 我把activity_main布局里面的 TabLayout 的 id 设置为 android:id="@+id/tabs
@@ -74,6 +81,13 @@ RxJava+Retrofit2 的常见实际使用场景
   依赖居然是 v13 时候,我就感觉很好奇了,百度了一下:[Android兼容包Support v4.v7.v13区别与应用场景 - CSDN博客 ](https://blog.csdn.net/woshimalingyi/article/details/50800259)
 * 由于装逼王(http://www.zhuangbi.info/)已经失效,这里我决定使用易源数据/showapi
   的[花瓣福利](https://www.showapi.com/api/lookPoint/819) 作为补充
+* 之前就略有所闻部分大牛开始倡导不建议使用Enum枚举类型,比如:[从一道面试题开始说起 枚举、动态代理的原理-玩Android - wanandroid.com ](http://www.wanandroid.com/blog/show/2038)
+  ,之后看到替换方法:[Android中代替枚举的@IntDef用法 - 简书 ](https://www.jianshu.com/p/422b7a91835a)
+* 一般而言,我们都会想到数据的本地缓存,图片就有三级缓存(LruCache+DiskLruCache+Net)
+  ,从网络缓存load下来的其他数据就下需要使用数据库/文件保存,这些是很基础的问题,但
+  现在可能有更好的实现方法,比如
+  * 图片三级缓存:Glide(保存图片,实现磁盘+内存+网络),使用文件保存网络图片路径即可
+  * 网路加载回来的数据保存,直接使用OkHttp即可,详看:[Android Retrofit 2.0 使用-补充篇 - 简书 ](https://www.jianshu.com/p/93153b34310e)
 
 
 ### RxJava + Retrofit2 推荐

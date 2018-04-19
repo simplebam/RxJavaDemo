@@ -24,11 +24,20 @@
     </RelativeLayout>
 
 
-    <ImageView
-        android:id="@+id/iv_image"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:layout_marginTop="6dp"
+        android:id="@+id/swipe_refresh"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="@string/app_name"/>
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"/>
+
+
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 
 </LinearLayout>
