@@ -23,6 +23,7 @@ import com.yueyue.rxjavademo.utils.ToastUtil;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -50,9 +51,11 @@ public class ZipFragment extends BaseFragment {
     void load() {
         changeSwipeRefreshState(true);
         unsubscribe();
+
+        int randomPage = new Random().nextInt(5)+1;// 1-6
         Disposable disposable = Observable.zip(
-                NetworkService.getGankApi().getBeauties(10, 1).map(GankBeautyResultToItemsMapper.getInstance()),
-                NetworkService.getHuaBanApi().getBeauties(10, 1, Constant.SHOWAPI_TYPE, Constant.SHOWAPI_APPID, Constant.SHOWAPI_SIGN),
+                NetworkService.getGankApi().getBeauties(10, randomPage).map(GankBeautyResultToItemsMapper.getInstance()),
+                NetworkService.getHuaBanApi().getBeauties(10, randomPage, Constant.SHOWAPI_TYPE, Constant.SHOWAPI_APPID, Constant.SHOWAPI_SIGN),
                 (gankItems, huabanItems) -> {
                     List<Item> items = new ArrayList<>(gankItems);
 
