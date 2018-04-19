@@ -9,6 +9,8 @@ RxJava+Retrofit2 的常见实际使用场景
 ### 项目截图
 <a href="./art/complete.png"><img src="./art/complete.png" width="40%"/></a><img height="0" width="8px"/><a href="./art/zip.png"><img src="./art/zip.png" width="40%"/></a>
 
+App体验链接:[rxjavademo-debug.apk](https://github.com/simplebam/RxJavaDemo/releases/download/v1.0/rxjavademo-debug.apk)
+
 
 ### 推荐项目
 * [simplebam/Weather: 天气应用App合集 ](https://github.com/simplebam/Weather)

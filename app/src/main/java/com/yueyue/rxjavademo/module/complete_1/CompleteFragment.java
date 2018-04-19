@@ -56,7 +56,7 @@ public class CompleteFragment extends BaseFragment {
                         yingPic -> {
                             changeSwipeRefreshState(false);
 
-                            Context context = getContext() == null ? App.getContext() : getContext();
+                            Context context = getContext() == null ?  App.getContext():getContext() ;
                             Glide.with(context).load(YingApi.HOST + yingPic.url)
                                     .into(mIvImage);
                         },

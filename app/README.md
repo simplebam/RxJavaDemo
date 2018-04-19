@@ -9,6 +9,7 @@ RxJava+Retrofit2 的常见实际使用场景
 ### 项目截图
 <a href="../art/complete.png"><img src="../art/complete.png" width="40%"/></a><img height="0" width="8px"/><a href="../art/zip.png"><img src="../art/zip.png" width="40%"/></a>
 
+App体验链接:[rxjavademo-debug.apk](https://github.com/simplebam/RxJavaDemo/releases/download/v1.0/rxjavademo-debug.apk)
 
 ### 项目中用到的知识
 * 命名规范-这里主要参考Blankj:[Android 开发规范（完结版） - 简书](https://www.jianshu.com/p/45c1675bec69)
