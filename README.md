@@ -25,6 +25,7 @@ App体验链接:[rxjavademo-debug.apk](https://github.com/simplebam/RxJavaDemo/r
 
 ### 推荐-推荐的不仅仅是技术
 * UpateDemo（更新模块）：[simplebam/UpdateDemo: App更新模块源码 ](https://github.com/simplebam/UpdateDemo)
+* [simplebam/GlideDemo ](https://github.com/simplebam/GlideDemo)
 * [Android 项目从零到上线的全过程 - Android - 掘金 ](https://juejin.im/entry/5817ff93128fe1005599a3b3)
 * [Android 能让你少走弯路的干货整理 - 简书 ](https://www.jianshu.com/p/514656c383a2)
 * [tvvocold/How-To-Ask-Questions-The-Smart-Way: How To Ask Questions The Smart Way 《提问的智慧》中文版 ](https://github.com/tvvocold/How-To-Ask-Questions-The-Smart-Way)
