@@ -17,6 +17,8 @@ App体验链接:[rxjavademo-debug.apk](https://github.com/simplebam/RxJavaDemo/r
 
 
 ### 项目中用到的开源库
+* ButterKnife
+  * [ButterKnife使用详解 - CSDN博客 ](https://blog.csdn.net/itjianghuxiaoxiong/article/details/50177549)
 * RxJava
   * 如果你还不会用,建议先看:[给初学者的RxJava2.0教程(一) - 简书 ](https://www.jianshu.com/p/464fa025229e)
     ,先不用管RxJava使用的什么的观察者模式。快速上手才是最重要的。
