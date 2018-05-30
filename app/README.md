@@ -82,7 +82,7 @@ App体验链接:[rxjavademo-debug.apk](https://github.com/simplebam/RxJavaDemo/r
   指出了  TabLayout 应该设置 android:id="@android:id/tabs"
 * 这里我在原项目看到 "compile 'com.android.support:support-v13:26.1.0'" 这个
   依赖居然是 v13 时候,我就感觉很好奇了,百度了一下:[Android兼容包Support v4.v7.v13区别与应用场景 - CSDN博客 ](https://blog.csdn.net/woshimalingyi/article/details/50800259)
-* 由于装逼王(http://www.zhuangbi.info/)已经失效,这里我决定使用易源数据/showapi
+* 由于[装逼王](http://www.zhuangbi.info/)链接已经失效,这里我决定使用易源数据/showapi
   的[花瓣福利](https://www.showapi.com/api/lookPoint/819) 作为补充
 * 之前就略有所闻部分大牛开始倡导不建议使用Enum枚举类型,比如:[从一道面试题开始说起 枚举、动态代理的原理-玩Android - wanandroid.com ](http://www.wanandroid.com/blog/show/2038)
   ,之后看到替换方法:[Android中代替枚举的@IntDef用法 - 简书 ](https://www.jianshu.com/p/422b7a91835a)
